@@ -1,7 +1,9 @@
-<h1>Now your results</h1>
-<p>Your word: <%=@word%></p>
-<p>Your score:<%=@score%></p>
-<p>Time taken to asnwer:<%=@time%></p>
-<p><%=@message%></p>
-<p>GRID: <%=params[:letters].gsub(" ",", ")%></p>
+<div class="container">
+  <h1>Now your results</h1>
+  <p>Your word: <%=@word%></p>
+  <p>Your score:<%=@score%></p>
+  <p>Time taken to asnwer:<%=@time%></p>
+  <p><%=@message%></p>
+  <p>GRID: <%=params[:letters].gsub(" ",", ")%></p>
 <%=link_to "Play again.", new_path, class: "btn btn-primary"%>
+</div>

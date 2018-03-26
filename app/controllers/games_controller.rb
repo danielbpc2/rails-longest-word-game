@@ -26,6 +26,7 @@ class GamesController < ApplicationController
         @score = answer["length"] * 100 / (@end_time.to_i - @start_time.to_time.to_i)
         @message = "Well done!"
         @time = @end_time.to_i - @start_time.to_time.to_i
+        cookies[:score] = @score if @score.to_i > cookies[:score].to_i
       else
         @score = 0
         @message = "The word is not in the grid."
@@ -34,7 +35,7 @@ class GamesController < ApplicationController
 
     elsif answer["found"] == false
       @score = 0
-      @message = "oh no! it is not an english word, #{answer['error']}"
+      @message = "oh no! it is not an english word"
       @time = @end_time.to_i - @start_time.to_time.to_i
     end
   end
